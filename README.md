@@ -1,7 +1,11 @@
 ### Project Overview: Airflow ETL Pipeline with Postgres and API Integration
+
+
+![HomepageUI](./Screenshots/abc.png)
+
 This project involves creating an ETL (Extract, Transform, Load) pipeline using Apache Airflow. The pipeline extracts data from an external API (in this case, NASA's Astronomy Picture of the Day (APOD) API), transforms the data, and loads it into a Postgres database. The entire workflow is orchestrated by Airflow, a platform that allows scheduling, monitoring, and managing workflows.
 
-The project leverages Docker to run Airflow and Postgres as services, ensuring an isolated and reproducible environment. We also utilize Airflow hooks and operators to handle the ETL process efficiently.
+This project leverages Docker to run Airflow and Postgres as services, ensuring an isolated and reproducible environment. I also utilize Airflow hooks and operators to handle the ETL process efficiently.
 
 Key Components of the Project:
 Airflow for Orchestration:
@@ -33,9 +37,17 @@ The ETL pipeline is orchestrated in Airflow using a DAG (Directed Acyclic Graph)
 1. Extract (E):
 The SimpleHttpOperator is used to make HTTP GET requests to NASA’s APOD API.
 The response is in JSON format, containing fields like the title of the picture, the explanation, and the URL to the image.
+
 2. Transform (T):
 The extracted JSON data is processed in the transform task using Airflow’s TaskFlow API (with the @task decorator).
 This stage involves extracting relevant fields like title, explanation, url, and date and ensuring they are in the correct format for the database.
+
 3. Load (L):
 The transformed data is loaded into a Postgres table using PostgresHook.
 If the target table doesn’t exist in the Postgres database, it is created automatically as part of the DAG using a create table task.
+
+
+
+
+AWS RDS Postgres Database :
+![HomepageUI](./Screenshots/def.png)
