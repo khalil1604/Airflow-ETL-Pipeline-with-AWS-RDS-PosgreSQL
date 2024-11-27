@@ -74,19 +74,3 @@ This project implements an ETL (Extract, Transform, Load) pipeline using Apache 
 
 - Docker Compose for service orchestration
 - Environment variables for API and database credentials
-- Volume mapping for data persistence
-
-## Future Improvements
-
-- Add error handling
-- Implement data validation
-- Create visualization dashboards
-- Extend to multiple API sources
-
-## Licensing
-
-[Add your license information]
-
-## Contact
-
-[Add contact information]
